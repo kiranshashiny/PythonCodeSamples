@@ -1,0 +1,18 @@
+
+load_classifiers
+face_eye_classifiers
+
+To read the training data - CascadeClassifier ("name of the xml file")
+
+
+
+detect_faces - will return how many "points" it detected from the library in this new image.
+
+If you get the isempty() that is because the xml file did not get loaded right !
+face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+
+
+
+
+	
