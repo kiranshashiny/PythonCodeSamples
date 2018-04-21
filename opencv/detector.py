@@ -22,30 +22,45 @@ while True:
         cv2.rectangle(im,(x,y),(x+w,y+h),(225,0,0),2)
         Id, conf = recognizer.predict(gray[y:y+h,x:x+w])
         print ("Shashi Conf = " ,conf, " Id = ", Id )
+
         if(conf < 50):
             if ( Id == 1) :
                 Id="Anirban"
-            elif (Id==2):
+            elif (Id==4):
                 Id="Shashi"
-        else:
-            Id="Unknown"
-        font                   = cv2.FONT_HERSHEY_SIMPLEX
-        bottomLeftCornerOfText = (10,300)
-        fontScale              = 1
-        fontColor              = (255,255,255)
-        lineType               = 2
-
-        cv2.putText(im,'Shashi Kiran!',
-		bottomLeftCornerOfText,
-		font,
-		fontScale,
-		fontColor,
-		lineType)
+                font                   = cv2.FONT_HERSHEY_SIMPLEX
+                bottomLeftCornerOfText = (10,300)
+                fontScale              = 1
+                fontColor              = (255,255,255)
+                lineType               = 2
         
-       
+                cv2.putText(im,'Shashi Kiran!',
+        		bottomLeftCornerOfText,
+        		font,
+        		fontScale,
+        		fontColor,
+        		lineType)
+                
+               
+            else:
+                Id="Unknown"
+                font                   = cv2.FONT_HERSHEY_SIMPLEX
+                bottomLeftCornerOfText = (10,300)
+                fontScale              = 1
+                fontColor              = (255,255,255)
+                lineType               = 2
+
+                cv2.putText(im,'Unknown User !',
+                        bottomLeftCornerOfText,
+                        font,
+                        fontScale,
+                        fontColor,
+                        lineType)
 
     cv2.imshow('im',im) 
     if cv2.waitKey(10) & 0xFF==ord('q'):
         break
+
+
 cam.release()
 cv2.destroyAllWindows()

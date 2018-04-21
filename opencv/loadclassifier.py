@@ -1,6 +1,6 @@
 # This loads files from training-data folder and identifies the faces.
 
-The face detection formulas are in cv2/data folder.
+#The face detection formulas are in cv2/data folder.
 # we use that in the cv2.Cascadeclassifier function.
 
 # next, we pass in the file that we intend to match it.
@@ -84,4 +84,3 @@ for file in files:
 		cv2.waitKey(0)
 		
 		cv2.destroyAllWindows()
-	
