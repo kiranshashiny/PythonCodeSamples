@@ -46,22 +46,10 @@ How to resolve :
 
 Types of IMREAD_
 
-	1	
-	IMREAD_COLOR
+	*1	IMREAD_COLOR If the flag is set to this value, the loaded image will be converted to a 3-channel BGR (Blue Green Red) color image.
 
-	If the flag is set to this value, the loaded image will be converted to a 3-channel BGR (Blue Green Red) color image.
+	*2	IMREAD_GRAYSCALE If the flag is set to this value, the loaded image will be converted to a single-channel grayscale image.
 
-	2	
-	IMREAD_GRAYSCALE
-
-	If the flag is set to this value, the loaded image will be converted to a single-channel grayscale image.
-
-	3	
-	IMREAD_LOAD_GDAL
+	*3	IMREAD_LOAD_GDAL If the flag is set to this value, you can load the image using the gdal driver.
 	
-	If the flag is set to this value, you can load the image using the gdal driver.
-	
-	4	
-	IMREAD_ANYCOLOR
-	
-	If the flag is set to this value, the image is read in any possible color format.
+	*4	IMREAD_ANYCOLOR If the flag is set to this value, the image is read in any possible color format.
