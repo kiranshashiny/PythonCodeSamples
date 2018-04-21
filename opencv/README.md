@@ -20,13 +20,48 @@ The FaceRecognizers are :
 
 
 
-quick way to test it :
+quick way to check if Basic Face recognizer is there or not.
 	
 	python3
 	import cv2
 	test = help(cv2.face_BasicFaceRecognizer)
 
+How to resolve :
 
+	cv2.error: /Users/travis/build/skvark/opencv-python/opencv_contrib/modules/face/src/eigen_faces.cpp:117: error: (-2) This Eigenfaces model is not computed yet. Did you call Eigenfaces::train? in function predict
 
+	This can happen in the detector.
+
+	Cause:
+	The trainner.xml was not created with the EigenFaceRecognizer()
+	and you were running the detector which had the EigenFaceRecognizer.
 
 	
+
+	How to resolve :
+		build the trainer and the detector with the same face recognizer.
+		If EigenFaceRecognizer. Then train with EigenFaceRecognizer.
+		If LBPH then train and detector with the same Recognizer.
+
+
+Types of IMREAD_
+
+	1	
+	IMREAD_COLOR
+
+	If the flag is set to this value, the loaded image will be converted to a 3-channel BGR (Blue Green Red) color image.
+
+	2	
+	IMREAD_GRAYSCALE
+
+	If the flag is set to this value, the loaded image will be converted to a single-channel grayscale image.
+
+	3	
+	IMREAD_LOAD_GDAL
+	
+	If the flag is set to this value, you can load the image using the gdal driver.
+	
+	4	
+	IMREAD_ANYCOLOR
+	
+	If the flag is set to this value, the image is read in any possible color format.
