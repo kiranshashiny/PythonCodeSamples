@@ -53,3 +53,11 @@ Types of IMREAD_
 * IMREAD_LOAD_GDAL If the flag is set to this value, you can load the image using the gdal driver.
 	
 * IMREAD_ANYCOLOR If the flag is set to this value, the image is read in any possible color format.
+
+
+### Check which version of cv2
+
+	python3
+	import cv2
+	cv2.__version__
+	'3.4.0'
