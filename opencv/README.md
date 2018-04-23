@@ -61,3 +61,13 @@ Types of IMREAD_
 	import cv2
 	cv2.__version__
 	'3.4.0'
+
+
+To Create the data set using the WebCam IP app
+
+        **python3 facialrecognitionIPWebcam.py**
+
+To Create the data set using the Laptop WebCam 
+
+	**python3  facialrecognition.py**
+
