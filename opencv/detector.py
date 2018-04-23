@@ -6,6 +6,7 @@
 import cv2
 import numpy as np
 
+#recognizer = cv2.face.EigenFaceRecognizer_create()
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainner.yml')
 #cascadePath = "haarcascade_frontalface_default.xml"
@@ -26,7 +27,7 @@ while True:
         if(conf < 50):
             if ( Id == 1) :
                 Id="Anirban"
-            elif (Id==4):
+            elif (Id==33):
                 Id="Shashi"
                 font                   = cv2.FONT_HERSHEY_SIMPLEX
                 bottomLeftCornerOfText = (10,300)
@@ -40,8 +41,34 @@ while True:
         		fontScale,
         		fontColor,
         		lineType)
-                
-               
+            elif (Id==9):
+                Id="Lakshmi Devi"
+                font                   = cv2.FONT_HERSHEY_SIMPLEX
+                bottomLeftCornerOfText = (10,300)
+                fontScale              = 1
+                fontColor              = (255,255,255)
+                lineType               = 2
+        
+                cv2.putText(im,'Lakshmi Devi !',
+        		bottomLeftCornerOfText,
+        		font,
+        		fontScale,
+        		fontColor,
+        		lineType)
+            elif (Id==6):
+                Id="Daksh "
+                font                   = cv2.FONT_HERSHEY_SIMPLEX
+                bottomLeftCornerOfText = (10,300)
+                fontScale              = 1
+                fontColor              = (255,255,255)
+                lineType               = 2
+        
+                cv2.putText(im,'Daksh !',
+        		bottomLeftCornerOfText,
+        		font,
+        		fontScale,
+        		fontColor,
+        		lineType)
             else:
                 Id="Unknown"
                 font                   = cv2.FONT_HERSHEY_SIMPLEX

@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
+#recognizer = cv2.face.EigenFaceRecognizer_create()
 # provide the full path to the trainer code.
 
 detector= cv2.CascadeClassifier('/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cv2/data/haarcascade_frontalface_default.xml')
