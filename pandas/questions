@@ -1,0 +1,173 @@
+
+1. Identify if this a series , or a 2d array
+[ 25, 36,59,37 ]
+
+This is a series
+
+2. Identify if this is Series or a 2d data structure
+
+Car Year-Model   cc
+Tata   2017      800
+Mahindra  2017  1500
+
+This is a 2D model.
+
+3. Pandas is built on top of Numpy
+
+4. Pandas can handle Series, 2D data and others.
+Yes
+No
+
+5. The data argument to Series have to be all of same data type ?
+
+True
+False # right answer - it can be a mix of string, int, float or a python object.
+
+
+6. Is an empty series considered a valid constructor ?
+pd.Series()
+
+yes
+No
+
+7. Is this a valid Series Constructor ?
+pd.Series ( 1,3,4 )
+
+Yes
+No # it has to be a list. [ ] 
+
+8. Is this a valid Pandas Series construct ?
+data = {'Jan' : 31, 'Feb' : 28, 'Mar' : 31}
+s = pd.Series(data)
+
+Yes
+No
+
+
+9. What does axes() function call return ?
+
+1. x axis elements
+2. Coordinates on the x axis
+3. Range ( start, stop and step )
+
+
+10. What is the difference in these print 2 statements ?  What does df2 print ?
+
+$cat printpandas.py 
+import pandas as pd
+data = [['Name',10, 10],['Bob',12, 12],['Clarke',13, 12]]
+df1 = pd.DataFrame(data,columns=['Name','Age', 'Weight'],dtype=float)
+df2 = pd.DataFrame(data,dtype=float)
+print (df1 )
+print (df2 )   
+
+df1 prints the header
+df2 prints the header, and data 
+df2 prints the data as strings 
+
+
+2 marks questions:
+
+1.What are the 3 types of data types supported by Pandas
+
+2. Write a 2D Pandas ( dataFrame)  construct for Car, "Model", "Make", "EngineCapacity" 
+Model and Make are data type String
+Engine Capacity is Integer
+
+3. Write a Pandas series data of 4 elements ( in int) and state it to be of dtype Bool
+pd.series ( data, dtype=Bool )
+
+Print it and check what gets printed
+There is an intentional mistake in the above statement - correct it.
+
+
+4. What is the axes of
+s = pd.Series(np.random.randn(4))
+print (s.axes )
+
+
+5. Write a Pandas Series of 4 elements of type Dict e.g: Jan :31, Feb:28, Mar:31, Apr:30
+	Print it
+
+6. Write the Pandas.DataFrame set with data = [1,2,3,4] 
+	Print it.
+
+7. Write a Pandas Data Frame for this data set.
+   data = {'Name':['Sam', 'Jack', 'John', 'Joe'],'Age':[22,15,90,14]}
+
+8. Write a Pandas Data Frame with a dict of series
+
+
+9. Identify the difference in these two statements.
+df = {'Qtr1' : pd.Series( ['J','F', 'Ma'], index=['a','b','c'] )}
+df = {'Qtr1' : pd.Series( ['J','F', 'Ma'], index=[1,2,3] )}
+
+10. what does "dtype" of the above statements return  ?
+Write a small program and print the results.
+
+
+4 marks questions :
+
+
+Write a program that will create a Series of 10 numbers and of dtype= int
+
+Write a program that will create a Series of 10 elements, they are of type np.ndarray ()
+
+Write a program that will convert a Python Pandas Series to a Python List
+
+Write a Program that will read the Python Series and create a list that will print the "2 to the power of this number " in the output list
+
+[ 1, 2, 3, 4 ]
+2 ^1 =  2
+2 ^2 =  4
+3 ^2 =  9
+4 ^2 = 16
+
+
+
+8 marks questions :
+
+
+1. Create a Pandas Data Frame with this data and print it.
+
+students  = {'name': ['Jane', 'Joe', 'John', 'James', 'Jacob'], 'talent': [25, 19, 79, 9, 20],
+        'points': [1, 3, 2, 3, 2],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no']}
+labels = ['v','w', 'x', 'y', 'z']
+
+
+2.  Read a file containing 4 columns,
+First name, Last name, Age,  Salary
+Jane	Doe	28 , 10,000
+
+Convert this into a Pandas Data Frame.
+
+
+3.  Read a file containing financial quotes and they are having different data types.
+Create a DataFrame with it.
+
+The file contains:
+Date,Open,High,Low,Close,Adj Close,Volume
+2018-03-22,149.600006,150.279999,146.399994,146.880005,146.880005,2579400
+
+Please consider the 2 decimal places when printing the price.
+
+4. This question needs user to research and do it after googling how to read SQL statement into the DataFrame.
+
+a. Create a Database 'testdb', b.Create a table 'stocksdata'.
+c.create a database with these following items.
+Date,Open,High,Low,Close,Adj Close,Volume
+d. Insert 4 records of data.
+Date,Open,High,Low,Close,Adj Close,Volume
+2018-02-27,156.630005,156.940002,153.839996,153.919998,153.919998,3098200
+2018-02-28,154.399994,154.979996,150.979996,151.110001,151.110001,3529000
+2018-03-01,151.330002,151.449997,146.630005,147.210007,147.210007,4626300
+2018-03-02,146.320007,148.789993,146.130005,148.139999,148.139999,3403900
+
+e. Create a DataFrame with this data.
+f. Read the SQL data, into this datatype.
+g. Calculate the average Open for 5 days.
+ 
+
+
+
