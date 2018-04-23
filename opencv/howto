@@ -12,6 +12,7 @@ If you get the isempty() that is because the xml file did not get loaded right !
 face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 1. Dataset Generator ( facialrecognition.py - waits with a photo - click ok.  saves in dataSet/.jpg and so on. )
+or ( python3 facialrecognitionIPWebcam.py )
 
 this creates 5 or more samples in the dataSet folder.
 Click 'q' and it takes another photo and saves it.
