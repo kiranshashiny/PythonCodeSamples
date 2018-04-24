@@ -1,0 +1,23 @@
+#include <Python.h>
+
+static PyMethodDef module_methods[] = 
+   { "module_func", (PyCFunction)module_func, METH_NOARGS, NULL },
+   { NULL, NULL, 0, NULL }
+};
+
+static PyObject *MyFunction(PyObject *self, PyObject *args)
+{
+    const char *command;
+    int sts;
+
+    if (!PyArg_ParseTuple(args, "s", &command))
+        return NULL;
+    sts = system(command);
+    return PyLong_FromLong(sts);
+}
+
+static PyObject *module_func(PyObject *self, PyObject *args) {
+   /* Do your stuff here. */
+   return "Hello world"
+   Py_RETURN_NONE;
+}
