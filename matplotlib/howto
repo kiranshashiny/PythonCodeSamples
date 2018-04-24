@@ -1,0 +1,33 @@
+
+plt.show() - to show the lines - that was created earlier.
+
+If plt.x and y were not created - then there is nothing to show ()
+
+x and y have to be same number of elements.
+
+plot ( x, y, ":" ) - will add a colin as the lines.
+plot ( x, y, "-" ) - will add a colin as the lines.
+plot ( x, y, "o" ) - will add a  circle marker
+plot ( x, y, "v" ) - will add a  triangle
+plot ( x, y, "ob" ) - will add a  circle marker in blue
+	ob = 'o= circle marker, b = blue
+	or = 'o= circle marker, r = red
+	b  for blue
+
+	g green, 
+	c cyan
+ 	y yellow
+	m magenta	
+	:wq
+
+
+
+To plot bar chars, use the plt.bar () function.
+
+x = [ 1,2,3,4 ]
+y = [7,8,9,0]
+
+plt.bar ( x, y ) 
+plt.bar ( x, y )  - NOT plt.plot !!!!!!
+
+
