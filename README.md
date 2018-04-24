@@ -1,8 +1,4 @@
-# PythonTuT
-Python Tutorial
 
-this is a test.
+# All Code Samples are in different folders here.
 
-this is aanother test.
-** My name is Daksh **
-** My name is Daksh **
+Please feel free to look around.
