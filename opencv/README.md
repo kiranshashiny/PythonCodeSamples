@@ -1,5 +1,10 @@
 
 
+BGR-> Gray and
+BGR -> HSV are the most popular 2 colors that can convert images from one to another.
+
+Simple Code to check if the image could be converted or not.
+
 	img = cv2.imread('trump.png')
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	if ( len( gray) ==0 ):
@@ -7,7 +12,7 @@
 	else :
 		print ("Image is good")
 
-The FaceRecognizers are :
+The different FaceRecognizers used for recognizing images are:
 
 	createEigenFaceRecognizer(...)
 	recognizer = cv2.face.EigenFaceRecognizer_create()
@@ -16,11 +21,9 @@ The FaceRecognizers are :
 
 	createLBPHFaceRecognizer(...)
 	recognizer = cv2.face.LBPHFaceRecognizer_create()
-	recognizer.read('trainner.yml')
+	
 
-
-
-quick way to check if Basic Face recognizer is there or not.
+Quick way to check if "Basic Face Recognizer" is empty or not.
 	
 	python3
 	import cv2
@@ -71,3 +74,21 @@ To Create the data set using the Laptop WebCam
 
 	**python3  facialrecognition.py**
 
+
+To detect both the "eyes" and the "face" using the classifiers:  during the facial detection
+
+http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html
+https://pythonprogramming.net/haar-cascade-face-eye-detection-python-opencv-tutorial/
+
+	faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+	for (x,y,w,h) in faces:
+	    img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+	    roi_gray = gray[y:y+h, x:x+w]
+	    roi_color = img[y:y+h, x:x+w]
+	    eyes = eye_cascade.detectMultiScale(roi_gray)
+	    for (ex,ey,ew,eh) in eyes:
+		cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+
+	cv2.imshow('img',img)
+	cv2.waitKey(0)
+	cv2.destroyAllWindows()
