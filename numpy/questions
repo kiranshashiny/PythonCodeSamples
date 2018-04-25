@@ -1,0 +1,61 @@
+1.when is clean_session flag in thei client constructor used ?
+
+2.what are the argument for the client.username_pw 
+
+3.What does a Client constructor return ?
+
+Does it return a int
+An error
+or an instance of the client class ?
+
+
+4. What is the default port for MQTT connection from the client to the MQTT Broker ?
+
+
+5. In the client code, When does the on_connect call back get called ?
+
+
+6. What is the type of message/acknowledgement that the client receives when it gets connected to the broker ?
+
+7. The publish() call is capable of raising what type of an Error Exception , when topic or qos is set to some invalid number ( other than 0,1 or 2 )
+
+8. Can multiple topics be set in the same subscribe () call ?
+e.g:  /temperature/room, and weather/data
+
+9. A PUBACK message is sent from whom ? 
+	Is it sent from the client to broker
+	or
+	Is it sent from the broker to the Client ?
+
+10. What is the role of keep alive flag  in the connect() ? call.
+
+
+4 marks questions :
+
+1. Write a small client code that publishes the soilmoisture/arid, 100
+
+soilmoisture/dry           75 
+soilmoisture/wet        50
+soilmoisture/submerged  0
+
+2. Write a program  that connects to a client, disconnects and then connects back. Validate that the connections are still connected back to the broker.
+
+3. Write call backs to check the acknowledgement messages for qos set to 0, 1 and 2.
+
+4. Write a program that will stay in subscribe mode and will listen to any messages of topic weatherdat/<all>
+
+
+8 marks questions :
+
+1. Connect to a MQTT Broker, ( like Cloudmqtt.com ) and set up the credentials by going thru their web site and 
+write a program to publish a "temperature/room" 28
+
+
+2. Repeat the same above, but repeat sending the temperature/room every 1 minute apart.
+
+3. Same program above, but integrate the subscribe() into it, and listen to all messages.
+Watch the cloudmqtt console to see that the messages have arrived at the console from the client.
+
+4. Write 2 clients that connects to a broker over the same port, and user name/pwd etc and one of it is sending temperature/# while the other is sending soilmoisturecontent/#
+
+
