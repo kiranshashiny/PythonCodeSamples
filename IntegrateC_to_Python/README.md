@@ -1,4 +1,22 @@
+# This is the Sample code for writing modules in C and integrating that to the Python Interpreter.
+
+#### To build - look at the sample code, and the build file below
+
+##### python setup.py build 
+##### sudo python setup.py install 
+
+
 https://www.tutorialspoint.com/python/python_further_extensions.htm
+
+This code is built for python and not Python3 !
+
+This is the module that we want to see written using our module.
+
+
+	#!/usr/bin/python
+	import helloworld
+
+	print helloworld.helloworld()
 
 1.
 The C functions:
