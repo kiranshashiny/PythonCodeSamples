@@ -25,7 +25,7 @@ The C functions:
 	
 
 
-Sample Code :
+Sample Code : hello.c
 
 	#include <Python.h>
 	
@@ -49,6 +49,12 @@ Sample Code :
 	
 	
 Build: setup.py
+
+	from distutils.core import setup, Extension
+	setup(name = 'helloworld', version = '1.0',  \
+	      ext_modules = [Extension('helloworld', ['hello.c'])])
+
+OR another example:	
 	
 	from distutils.core import setup, Extension
 	
@@ -61,8 +67,4 @@ Build: setup.py
 	       ext_modules = [module1])
 
 
-OR another example:	
 	
-	from distutils.core import setup, Extension
-	setup(name = 'helloworld', version = '1.0',  \
-	      ext_modules = [Extension('helloworld', ['hello.c'])])
