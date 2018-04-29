@@ -2,3 +2,4 @@
 import helloworld
 
 print helloworld.helloworld()
+print helloworld.helloworld_two()

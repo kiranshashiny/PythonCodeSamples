@@ -10,6 +10,8 @@ https://www.tutorialspoint.com/python/python_further_extensions.htm
 
 This code is built for python and not Python3 !
 
+	sudo python setup.py install
+
 This is the module that we want to see written using our module.
 
 
