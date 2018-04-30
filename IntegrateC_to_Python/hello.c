@@ -30,6 +30,17 @@ static PyObject *foo_add_subtract(PyObject *self, PyObject *args) {
    return Py_BuildValue("ii", a + b, a - b);
 }
 
+/* fourth function in this module. */
+static PyObject *foo_add(PyObject *self, PyObject *args) {
+   int a;
+   int b;
+
+   if (!PyArg_ParseTuple(args, "ii", &a, &b)) {
+      return NULL;
+   }
+   return Py_BuildValue("i", a + b);
+}
+
 
 
 static char helloworld_docs[] =
@@ -42,9 +53,9 @@ static char helloworld_docs[] =
 static PyMethodDef helloworld_funcs[] = {
    {"helloworld", (PyCFunction)helloworld, METH_NOARGS, helloworld_docs},
    {"helloworld_two",   (PyCFunction)helloworld_two,      METH_NOARGS, helloworld_docs},
-   {"foo_add_subtract", (PyCFunction)foo_add_subtract,    METH_VARARGS,helloworld_docs},
-
-      {NULL}
+   {"foo_add_subtract", (PyCFunction)foo_add_subtract,    METH_VARARGS, helloworld_docs},
+   {"foo_add",          (PyCFunction)foo_add,             METH_VARARGS, helloworld_docs},
+   {NULL}
 };
 
 void inithelloworld(void) {

@@ -2,7 +2,7 @@
 
 #### To build - look at the sample code, and the build file below
 
-##### python setup.py build 
+#####      python setup.py build 
 ##### sudo python setup.py install 
 
 
@@ -14,13 +14,13 @@ This code is built for python and not Python3 !
 
 This is the module that we want to see written using our module.
 
-There are 2 calls to different functions in the same module.
-
 	#!/usr/bin/python
 	import helloworld
 
-	print helloworld.helloworld()
-	print helloworld.helloworld_two()
+	print (helloworld.helloworld() )
+	print (helloworld.helloworld_two() )
+	print (helloworld.foo_add_subtract ( 2, 3) )
+
 
 1.
 The C functions:
@@ -45,6 +45,7 @@ The C functions:
 	initModule - where Module is the name of the module.
 	
 
+### This is only a sample of the code, To see the real code look at hello.c checked in this repo.
 
 Sample Code : hello.c
 
