@@ -19,6 +19,19 @@ static PyObject* helloworld_two(PyObject* self) {
    return Py_BuildValue("s", "Hello From hello world_two Python C extension !!");
 }
 
+/* this is a third function in this module. */
+static PyObject *foo_add_subtract(PyObject *self, PyObject *args) {
+   int a;
+   int b;
+
+   if (!PyArg_ParseTuple(args, "ii", &a, &b)) {
+      return NULL;
+   }
+   return Py_BuildValue("ii", a + b, a - b);
+}
+
+
+
 static char helloworld_docs[] =
    "helloworld( ): Any message you want to put here!!\n";
 
@@ -28,7 +41,9 @@ static char helloworld_docs[] =
 
 static PyMethodDef helloworld_funcs[] = {
    {"helloworld", (PyCFunction)helloworld, METH_NOARGS, helloworld_docs},
-   {"helloworld_two", (PyCFunction)helloworld_two, METH_NOARGS, helloworld_docs},
+   {"helloworld_two",   (PyCFunction)helloworld_two,      METH_NOARGS, helloworld_docs},
+   {"foo_add_subtract", (PyCFunction)foo_add_subtract,    METH_VARARGS,helloworld_docs},
+
       {NULL}
 };
 
