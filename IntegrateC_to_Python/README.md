@@ -14,11 +14,13 @@ This code is built for python and not Python3 !
 
 This is the module that we want to see written using our module.
 
+There are 2 calls to different functions in the same module.
 
 	#!/usr/bin/python
 	import helloworld
 
 	print helloworld.helloworld()
+	print helloworld.helloworld_two()
 
 1.
 The C functions:
@@ -41,7 +43,6 @@ The C functions:
 3. Initialization Module
 
 	initModule - where Module is the name of the module.
-	
 	
 
 
@@ -68,6 +69,16 @@ Sample Code : hello.c
 	static PyObject* helloworld_two(PyObject* self) {
 	   return Py_BuildValue("s", "Hello From hello world_two Python C extension !!");
 	}
+
+	static PyObject *foo_add_subtract(PyObject *self, PyObject *args) {
+        	int a;
+		int b;
+
+		if (!PyArg_ParseTuple(args, "ii", &a, &b)) {
+			return NULL;
+   		}
+		return Py_BuildValue("ii", a + b, a - b);
+	}
 	
 	static char helloworld_docs[] =
 	   "helloworld( ): Any message you want to put here!!\n";
@@ -79,6 +90,7 @@ Sample Code : hello.c
 	static PyMethodDef helloworld_funcs[] = {
 	   {"helloworld", (PyCFunction)helloworld, METH_NOARGS, helloworld_docs},
 	   {"helloworld_two", (PyCFunction)helloworld_two, METH_NOARGS, helloworld_docs},
+	   { "func", module_func, METH_VARARGS, NULL },
 	      {NULL}
 	};
 	
