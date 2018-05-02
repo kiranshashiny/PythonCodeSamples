@@ -1,1 +1,47 @@
-ehllo world
+## Flask Folder.
+
+Important Links used in this blog.
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+
+1. Create an virtual environment
+
+	python3 -m venv myvirtualenv
+
+2. Activate it 
+	$ source myvirtualenv/bin/activate
+	(myvirtualenv) Shashis-MacBook-Air:flaskdir shashikiran$
+
+To deactivate : run the **deactivate** 
+
+	(myvirtualenv) Shashis-MacBook-Air:flaskdir shashikiran$ deactivate
+	Shashis-MacBook-Air:flaskdir shashikiran
+
+
+The code is in app folder
+	__init__.py
+	templates 	
+	routes
+       	microblog.py
+
+export FLASK_APP=microblog.py
+execute this code to run the app.
+	'flask run' 
+
+Open the browser and go to http://localhost:5000
+
+### How to resolve if the Jinga template does not show up right !
+
+This below is incorrect !  
+	{ % if title %}
+
+
+Resolution :
+	Notice the 'space' after the {, it should not be there.
+	
+The correct statement is 
+
+	{% if title %}
+        {% else %}
+	{% endif %}
